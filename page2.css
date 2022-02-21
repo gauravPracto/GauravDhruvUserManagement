@@ -1,0 +1,123 @@
+body{
+  background-color: rgb(146, 149, 151);  
+}
+
+.main_container{
+  align-items: center;
+  align-content: center;
+  display: flex;
+  justify-content: center;
+  height: 600px;
+  
+}
+.form_div{
+  display: flex;
+  align-items: center;
+  align-content: center;
+  background-color: #555;
+  
+  justify-content: center;
+  
+  width:40%;
+  height: fit-content;
+  box-shadow: 10px 10px rgb(53, 52, 52);
+  
+
+  border-radius: 8px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 1%;
+}
+#name{
+  display: flex;
+  justify-content:center;
+  align-items:center;
+}
+
+#lname,#fname{
+  width: 80%;
+}
+
+#address,#age-gender{
+  display: flex;
+  padding:0px;
+
+}
+#houseno,#city,#country{
+  width:80%;
+  
+}
+
+#buttons{
+  justify-content: center;
+  display: flex;
+}
+
+img{
+  width: 100px;
+  height: 100px;
+  position: relative;
+  left: 30%;
+
+}
+
+
+
+label{
+  width: 30px;
+
+}
+
+input[type=text]  {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  height: 20px;
+  
+  display: flex;
+}
+
+input[type=text]:focus {
+  border: 3px solid rgb(154, 231, 11);
+}
+
+select{
+  width: 100%;
+  padding: 0px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  height: 30px;
+  display: flex;
+}
+
+input[type=button]  {
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 10px 2px;
+  cursor: pointer;
+  
+  
+}
+
+button {
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  
+}
+label{
+  
+  text-decoration: solid;
+  font-size: large;
+  font-family: Arial, Helvetica, sans-serif;
+  
+}
+

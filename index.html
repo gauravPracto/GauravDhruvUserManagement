@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Info</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="body">
+    <nav>
+        <div id="navBar">
+            <span>Register Yourself here</span>
+            <button id="register-btn" onclick="onRegisterButtonClick(event)">
+                Register Here
+            </button>
+        </div>
+    </nav>
+    <section>
+        <div id="section">
+
+        </div>
+        <div id="pop-up">
+            <div id="alert">please fill all details</div>
+            <div id="closeButtonDiv"><button id="close-button" onclick="onCloseButton()">Close </button></div>
+            <div id="form-div">
+                <form id="form">
+                    <div class="inform"><label for="fname">First name:</label><br>
+                        <input type="text" id="fname" name="fname" required><br></div>
+                    <div class="inform"><label for="lname">Last name:</label><br>
+                        <input type="text" id="lname" name="lname" required></div>
+                    <div class="white">
+                        <label for="gender">Choose a Gender:</label>
+                        <br>
+                        <select name="gender" id="gender">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Others">Others</option>
+                    </select>
+                    </div>
+                    <div class="inform"><label for="age">Age:</label><br>
+                        <input min="1" type="number" id="age" name="age" required></div>
+                    <div class="inform"><label for="address1">address1:</label><br>
+                        <input type="text" id="address1" name="address1" required><br></div>
+                    <div class="inform"><label for="address2">address2:</label><br>
+                        <input type="text" id="address2" name="address2" required></div>
+                    <div class="white">
+                        <label for="id-proof">Choose a identity-type:</label>
+                        <br>
+                        <select name="id-proof" id="id-proof">
+                        <option value="Aadhar">Aadhar</option>
+                        <option value="PAN">PAN</option>
+                        <option value="DL">DL</option>
+                    </select>
+                    </div>
+                    <div class="inform"><label for="identity">Identity Number</label><br>
+                        <input pattern="[a-zA-Z0-9 ]+" id="identity" name="identity" required></div>
+                    <button onClick={onSubmit(event)} type="submit" id="submit-btn"><span id="button-text">Submit Form</span></button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script src="./script.js"></script>
+</body>
+
+</html>

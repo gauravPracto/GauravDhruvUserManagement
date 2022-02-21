@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="page2.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <div class="main_container">
+
+            <div class="center">
+                <div class="header">
+                </div>
+            </div>
+
+            <div class="form_div">
+
+                <form action="page2.html" method="post" id="form">
+
+                    <div class="profile_div">
+                        <img src="" id="profilepic" alt="profile pic">
+                    </div>
+
+                    <div class="elements" id="name">
+                        <div>
+                            <label for="fname">First Name</label>
+                            <input type="text" id="fname" value="" disabled="disabled" required>
+                        </div>
+                        <div>
+                            <label for="lname">Last Name</label>
+                            <input type="text" id="lname" value="" disabled="disabled" required>
+                        </div>
+
+                    </div>
+                    <div class="elements" id="address">
+                        <div>
+                            <label for="address1">House no.</label><br>
+                            <input type="text" id="address1" value="" disabled="disabled" required><br>
+                        </div>
+                        <div>
+                            <label for="address2">address2</label><br>
+                            <input type="text" id="address2" value="" disabled="disabled" required><br>
+                        </div>
+
+                    </div>
+                    <div class="elements" id="age-gender">
+                        <div>
+                            <label for="age">Age</label><br>
+                            <input type="text" id="age" value="" disabled="disabled" required><br>
+                        </div>
+                        <div>
+                            <label for="gender">Gender</label><br>
+                            <input type="text" id="gender" value="" disabled="disabled" required><br>
+                        </div>
+
+                    </div>
+                    <div class="elements">
+                        <label for="idProff">Id Type</label><br>
+                        <!-- <input type="text" id ="idProff" value="" disabled="disabled"><br> -->
+
+                        <select id="idProff" name="idProff" disabled="disabled">
+                            <option value="Aadhar">Aadhar</option>
+                            <option value="DL">DL</option>
+                            <option value="PAN">PAN</option>
+                          </select>
+
+                    </div>
+                    <div class="elements">
+                        <label for="identity">Number</label><br>
+                        <input type="text" id="identity" value="" disabled="disabled" required><br>
+                    </div>
+                    <div class="elements" id="buttons">
+                        <div id="button" class="button">
+                            <input type="button" id="edit_Value" value="Edit On" onclick="enableDisable(this)"></button>
+                            <button type="submit">Submit</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+
+    </main>
+    <script src="page2.js"></script>
+</body>
+
+</html>
