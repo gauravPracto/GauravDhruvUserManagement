@@ -44,6 +44,7 @@ for (var i = 0; i < users.length; i++) {
         age.value = users[i].age;
         idProff.value = users[i].idProff;
         identity.value = users[i].identity;
+        profilepic.src = users[i].image;
 
         console.log(users[i]);
         console.log(index);
@@ -52,12 +53,6 @@ for (var i = 0; i < users.length; i++) {
 }
 
 //updating the profile pic
-if (users[index].gender == "male") {
-    profilepic.src = "newBoy.png";
-} else {
-    profilepic.src = "newGirl.png"
-}
-
 
 
 //changing state of the form form edit on to off and vice versa
@@ -101,56 +96,86 @@ form.addEventListener("submit", function(e) {
 
     //Storing the newly entered values..
     var fname2 = document.querySelector('#fname').value;
-    //..in DB
+    var lname2 = document.querySelector('#lname').value;
+    var age2 = document.querySelector('#age').value;
+    var address1 = document.querySelector('#address1').value;
+    var address2 = document.querySelector('#address2').value;
+    var identity2 = document.querySelector('#identity').value;
+    console.log(fname2);
+
+
+    if(fname2!="" && lname2 !="" && age2!="" && address1 !="" && address2!="" && identity2!="" ){
+
+            //..in DB
     users[index].fname = fname2;
     //in Form Fields
     document.getElementById("fname").innerHTML = users[index].fname;
+    
+    
+    
 
-    var lname2 = document.querySelector('#lname').value;
+    
     users[index].lname = lname2;
     document.getElementById("lname").innerHTML = users[index].lname;
 
-    var age2 = document.querySelector('#age').value;
+    
     users[index].age = age2;
     document.getElementById("age").innerHTML = users[index].age;
 
-    var address1 = document.querySelector('#address1').value;
+    
     users[index].address1 = address1;
     document.getElementById("address1").innerHTML = users[index].address1;
 
-    var address2 = document.querySelector('#address2').value;
+    
     users[index].address2 = address2;
     document.getElementById("address2").innerHTML = users[index].address2;
 
-    var gender2 = document.querySelector('#gender').value;
-    users[index].gender = gender2;
-    document.getElementById("gender").innerHTML = users[index].gender;
+    var gender = document.querySelector('#gender');
+    users[index].gender = gender.value;
+    
 
-
-    idProff = document.getElementById('idProff');
-    //idProff.value=
     var idProff = document.querySelector('#idProff');
-    console.log(idProff.value);
     users[index].idProff = idProff.value;
-    idProff.value = users[index].idProff;
-    var identity2 = document.querySelector('#identity').value;
+
+    
     users[index].identity = identity2;
     document.getElementById("identity").value = users[index].identity;
-    if (users[index].gender2 == "male") {
+    console.log(gender);
+    
+    if (users[index].gender == "Male") {
+        console.log("male");
+        users[index].image="newBoy.png";
         profilepic.src = "newBoy.png";
     } else {
-        profilepic.src = "newGirl.png"
+        users[index].image = "newGirl.png";
+        profilepic.src = "newGirl.png";
+        console.log("female");
     }
 
-    if (users[index].age > 0) {
-        localStorage.setItem("users", JSON.stringify({ user: users }))
-        location.reload();
-    } else {
-        alert(" Age Must Be Greater Than 0")
+    }
+    else{
+        alert('enter all feilds');
     }
 
+
+
+
+    // if(users[index].fname !="" && users[index].lname !="" && users[index].age !="" && users[index].gender !=""
+    //  && users[index].address1 !="" && users[index].address2 !="" && users[index].idProff !="" && users[index].identity !="")
+    //  {
+
+        if (users[index].age > 0) {
+            localStorage.setItem("users", JSON.stringify({ user: users }))
+            
+        } else {
+            alert(" Age Must Be Greater Than 0")
+        }
+
+     //}
+    //  else{
+    //      alert("inavlid input");
+    //  }
+    location.reload();
     console.log(users[index]);
 
 })
-
-//console.log(users[index]);
