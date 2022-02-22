@@ -84,7 +84,7 @@ const onSubmit = (e) => {
     const idProff = document.getElementById("id-proof").value
     const identity = document.getElementById("identity").value
 
-    if (fname && lname && gender && age && address1 && idProff && identity) {
+    if (fname && lname && gender && age && address1 && idProff && identity && address2) {
         if (age > 0) {
             alert.style.display = "none"
             const element = { lname: lname, fname: fname, id: id, name: fname + " " + lname, age: age, gender: gender, address1: address1, address2: address2, idProff: idProff, identity: identity, image: gender == "Female" ? "https://img.icons8.com/external-justicon-lineal-color-justicon/344/external-girl-christmas-avatar-justicon-lineal-color-justicon-2.png" : "https://img.icons8.com/external-justicon-lineal-color-justicon/344/external-boy-christmas-avatar-justicon-lineal-color-justicon-5.png" }
