@@ -104,56 +104,55 @@ form.addEventListener("submit", function(e) {
     console.log(fname2);
 
 
-    if(fname2!="" && lname2 !="" && age2!="" && address1 !="" && address2!="" && identity2!="" ){
+    if (fname2 != "" && lname2 != "" && age2 != "" && address1 != "" && identity2 != "") {
 
-            //..in DB
-    users[index].fname = fname2;
-    //in Form Fields
-    document.getElementById("fname").innerHTML = users[index].fname;
-    
-    
-    
+        //..in DB
+        users[index].fname = fname2;
+        //in Form Fields
+        document.getElementById("fname").innerHTML = users[index].fname;
 
-    
-    users[index].lname = lname2;
-    document.getElementById("lname").innerHTML = users[index].lname;
 
-    
-    users[index].age = age2;
-    document.getElementById("age").innerHTML = users[index].age;
 
-    
-    users[index].address1 = address1;
-    document.getElementById("address1").innerHTML = users[index].address1;
 
-    
-    users[index].address2 = address2;
-    document.getElementById("address2").innerHTML = users[index].address2;
 
-    var gender = document.querySelector('#gender');
-    users[index].gender = gender.value;
-    
+        users[index].lname = lname2;
+        document.getElementById("lname").innerHTML = users[index].lname;
 
-    var idProff = document.querySelector('#idProff');
-    users[index].idProff = idProff.value;
 
-    
-    users[index].identity = identity2;
-    document.getElementById("identity").value = users[index].identity;
-    console.log(gender);
-    
-    if (users[index].gender == "Male") {
-        console.log("male");
-        users[index].image="newBoy.png";
-        profilepic.src = "newBoy.png";
+        users[index].age = age2;
+        document.getElementById("age").innerHTML = users[index].age;
+
+
+        users[index].address1 = address1;
+        document.getElementById("address1").innerHTML = users[index].address1;
+
+
+        users[index].address2 = address2;
+        document.getElementById("address2").innerHTML = users[index].address2;
+
+        var gender = document.querySelector('#gender');
+        users[index].gender = gender.value;
+
+
+        var idProff = document.querySelector('#idProff');
+        users[index].idProff = idProff.value;
+
+
+        users[index].identity = identity2;
+        document.getElementById("identity").value = users[index].identity;
+        console.log(gender);
+
+        if (users[index].gender == "Male") {
+            console.log("male");
+            users[index].image = "newBoy.png";
+            profilepic.src = "newBoy.png";
+        } else {
+            users[index].image = "newGirl.png";
+            profilepic.src = "newGirl.png";
+            console.log("female");
+        }
+
     } else {
-        users[index].image = "newGirl.png";
-        profilepic.src = "newGirl.png";
-        console.log("female");
-    }
-
-    }
-    else{
         alert('enter all feilds');
     }
 
@@ -164,14 +163,14 @@ form.addEventListener("submit", function(e) {
     //  && users[index].address1 !="" && users[index].address2 !="" && users[index].idProff !="" && users[index].identity !="")
     //  {
 
-        if (users[index].age > 0) {
-            localStorage.setItem("users", JSON.stringify({ user: users }))
-            
-        } else {
-            alert(" Age Must Be Greater Than 0")
-        }
+    if (users[index].age > 0) {
+        localStorage.setItem("users", JSON.stringify({ user: users }))
 
-     //}
+    } else {
+        alert(" Age Must Be Greater Than 0")
+    }
+
+    //}
     //  else{
     //      alert("inavlid input");
     //  }
