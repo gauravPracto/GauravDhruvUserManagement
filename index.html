@@ -27,12 +27,12 @@
             <div id="closeButtonDiv"><button id="close-button" onclick="onCloseButton()">Close </button></div>
             <div id="form-div">
                 <form id="form">
-                    <div class="inform"><label for="fname">First name:</label><br>
+                    <div class="inform"><label for="fname">First name *:</label><br>
                         <input type="text" id="fname" name="fname" required><br></div>
-                    <div class="inform"><label for="lname">Last name:</label><br>
+                    <div class="inform"><label for="lname">Last name *:</label><br>
                         <input type="text" id="lname" name="lname" required></div>
                     <div class="white">
-                        <label for="gender">Choose a Gender:</label>
+                        <label for="gender">Choose a Gender *:</label>
                         <br>
                         <select name="gender" id="gender">
                             <option value="Male">Male</option>
@@ -40,14 +40,14 @@
                             
                     </select>
                     </div>
-                    <div class="inform"><label for="age">Age:</label><br>
+                    <div class="inform"><label for="age">Age *:</label><br>
                         <input min="1" type="number" id="age" name="age" required></div>
-                    <div class="inform"><label for="address1">address1:</label><br>
+                    <div class="inform"><label for="address1">address1 *:</label><br>
                         <input type="text" id="address1" name="address1" required><br></div>
-                    <div class="inform"><label for="address2">address2:</label><br>
+                    <div class="inform"><label style="color:green" for="address2">address2:</label><br>
                         <input type="text" id="address2" name="address2" required></div>
                     <div class="white">
-                        <label for="id-proof">Choose a identity-type:</label>
+                        <label for="id-proof">Choose a identity-type *:</label>
                         <br>
                         <select name="id-proof" id="id-proof">
                         <option value="Aadhar">Aadhar</option>
@@ -55,7 +55,7 @@
                         <option value="DL">DL</option>
                     </select>
                     </div>
-                    <div class="inform"><label for="identity">Identity Number</label><br>
+                    <div class="inform"><label for="identity">Identity Number *</label><br>
                         <input pattern="[a-zA-Z0-9 ]+" id="identity" name="identity" required></div>
                     <button onClick={onSubmit(event)} type="submit" id="submit-btn"><span id="button-text">Submit Form</span></button>
                 </form>

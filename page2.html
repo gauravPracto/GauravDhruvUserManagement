@@ -25,36 +25,29 @@
                     <div class="profile_div">
                         <img src="" id="profilepic" alt="profile pic">
                     </div>
-
+                    <div class="group">
+                        Personal Details
+                    </div>
                     <div class="elements" id="name">
-                        <div>
-                            <label for="fname">First Name</label>
+                        <div id="">
+                            <label for="fname">First Name *</label>
                             <input type="text" id="fname" value="" disabled="disabled" required>
                         </div>
                         <div>
-                            <label for="lname">Last Name</label>
+                            <div class="group">
+                            </div>
+                            <label for="lname">Last Name *</label>
                             <input type="text" id="lname" value="" disabled="disabled" required>
-                        </div>
-
-                    </div>
-                    <div class="elements" id="address">
-                        <div>
-                            <label for="address1">Address 1</label><br>
-                            <input type="text" id="address1" value="" disabled="disabled" required><br>
-                        </div>
-                        <div>
-                            <label for="address2">Address 2</label><br>
-                            <input type="text" id="address2" value="" disabled="disabled"><br>
                         </div>
 
                     </div>
                     <div class="elements" id="age-gender">
                         <div>
-                            <label for="age">Age</label><br>
+                            <label for="age">Age *</label><br>
                             <input type="text" id="age" value="" disabled="disabled" required><br>
                         </div>
                         <div>
-                            <label for="gender">Gender</label><br>
+                            <label for="gender">Gender *</label><br>
                             <!-- <input type="text" id="gender" value="" disabled="disabled" required><br> -->
                             <select id="gender" name="gender" disabled="disabled">
                                 <option value="Male">Male</option>
@@ -62,8 +55,27 @@
                               </select>
                         </div>
                     </div>
+                    <hr>
+                    <div class="group">
+                        Redsidential Details
+                    </div>
+                    <div class="elements" id="address">
+                        <div>
+                            <label for="address1">Address 1 *</label><br>
+                            <input type="text" id="address1" value="" disabled="disabled" required><br>
+                        </div>
+                        <div>
+                            <label for="address2" style="color: green;">Address 2</label><br>
+                            <input type="text" id="address2" value="" disabled="disabled"><br>
+                        </div>
+
+                    </div>
+                    <hr>
+                    <div class="group">
+                        Identity Details
+                    </div>
                     <div class="elements">
-                        <label for="idProff">Id Type</label><br>
+                        <label for="idProff">Id Type *</label><br>
                         <!-- <input type="text" id ="idProff" value="" disabled="disabled"><br> -->
 
                         <select id="idProff" name="idProff" disabled="disabled">
@@ -73,8 +85,9 @@
                           </select>
 
                     </div>
+
                     <div class="elements">
-                        <label for="identity">ID-Number</label><br>
+                        <label for="identity">ID-Number *</label><br>
                         <input type="text" id="identity" value="" disabled="disabled" required><br>
                     </div>
                     <div class="elements" id="buttons">
