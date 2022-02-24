@@ -1,4 +1,4 @@
-body{
+/* body{
     background-color: rgb(146, 149, 151);  
   }
   
@@ -175,8 +175,6 @@ body{
     
   }
 
-  /* aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa */
-
 
 
 
@@ -274,4 +272,86 @@ body{
 
   #edit-button-div{
       height:50%;
-  }
+  } */
+
+#form_div {
+    background-color: aliceblue;
+    height: 100%;
+}
+
+#form {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: aliceblue;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 80%;
+}
+
+label {
+    display: block;
+}
+
+.profile_div {
+    text-align: center;
+}
+
+.elements {
+    margin: 2%;
+}
+
+#name {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+}
+
+#name>div {
+    margin-left: 20px;
+}
+
+#second {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+}
+
+#second>div {
+    margin-left: 20px;
+}
+
+#address {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+}
+
+#address>div {
+    margin-left: 20px;
+}
+
+#age-gender {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+}
+
+#age-gender>div {
+    margin-left: 20px;
+}
+
+#id-type {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+}
+
+#id-type>div {
+    margin-left: 20px;
+}
+
+#buttons {
+    display: flex;
+    justify-content: center;
+}
