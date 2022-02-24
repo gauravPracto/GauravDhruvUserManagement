@@ -4,6 +4,7 @@ window.onload = function() {
     fetch("../localStorage/storage.json").then(
         response => response.json()
     ).then(store => {
+        console.log(store)
         data = store
         console.log(data)
         id = 0;
