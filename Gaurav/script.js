@@ -143,7 +143,7 @@ window.onload = function() {
                         var regex = /^(([A-Z]{2}[0-9]{2})( )|([A-Z]{2}-[0-9]{2}))((19|20)[0-9][0-9])[0-9]{7}$/
                         if (!regex.test(identity)) {
                             message = "enter valid DL number"
-                            console.log('valid Dl')
+                            console.log('invalid Dl')
                         } else {
                             message = ''
                             console.log(regex.test(identity))

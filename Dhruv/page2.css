@@ -293,7 +293,7 @@ label {
     display: block;
 }
 
-.profile_div {
+.profile_div,.outer-profile_div {
     text-align: center;
 }
 
@@ -301,57 +301,109 @@ label {
     margin: 2%;
 }
 
-#name {
+#name,#outer-name {
     display: flex;
     flex-direction: row;
     justify-content: start;
 }
 
-#name>div {
+#name>div,#outer-name>div {
     margin-left: 20px;
 }
 
-#second {
+#second,#outer-second {
     display: flex;
     flex-direction: row;
     justify-content: start;
 }
 
-#second>div {
+#second>div, #outer-second>div {
     margin-left: 20px;
 }
 
-#address {
+#address,#outer-address {
     display: flex;
     flex-direction: row;
     justify-content: start;
 }
 
-#address>div {
+#address>div, #outer-address>div {
     margin-left: 20px;
 }
 
-#age-gender {
+#age-gender,#outer-age-gender {
     display: flex;
     flex-direction: row;
     justify-content: start;
 }
 
-#age-gender>div {
+#age-gender>div,#outer-age-gender {
     margin-left: 20px;
 }
 
-#id-type {
+#id-type,#outer-id-type {
     display: flex;
     flex-direction: row;
     justify-content: start;
 }
 
-#id-type>div {
+#id-type>div ,#outer-id-type>div{
     margin-left: 20px;
 }
 
-#buttons {
+#buttons,#outer-button {
     display: flex;
     justify-content: center;
 }
+
+
+
+
+/* aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa */
+
+
+.modal-bg{
+    position: fixed;
+    width: 80%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    opacity: 0;
+    visibility: hidden;
+    
+  }
+  
+  .modal{
+    position: relative;
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 20px;
+    margin: auto;
+    text-align: center;
+  }
+  
+  .bg-active{
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .modal-close{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  img{
+    width: 100px;
+    height: 100px;
+  }

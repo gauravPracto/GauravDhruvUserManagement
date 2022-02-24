@@ -4,6 +4,8 @@ const myStorage = window.localStorage;
 const params = new URLSearchParams(location.search);
 const id = params.get("id");
 var users = JSON.parse(myStorage.getItem("users")).user;
+
+
 //sample DB
 // var users = [{ id: "1", fname: "Sam", lname: "", address1: "123/1", address2: "delhi", gender: "male", age: "32", idProff: "Aadhar", identity: "adh67647676" },
 //     { id: "2", fname: "Alex", lname: "Adams", address1: "123/2", address2: "noida", gender: "male", age: "74", idProff: "PAN", identity: "pan74636993809" },
@@ -62,6 +64,9 @@ openmodal.addEventListener("click", function () {
         age.removeAttribute("disabled");
         idProff.removeAttribute("disabled");
         identity.removeAttribute("disabled");
+        city.removeAttribute("disabled");
+        state.removeAttribute("disabled");
+        pincode.removeAttribute("disabled");
 
         edit_Value.value = "Edit Off";
 
@@ -153,16 +158,20 @@ var form = document.querySelector("#form");
 form.addEventListener("submit", function (e) {
     e.preventDefault();
 
+    var valid_age =0;
+    var valid_id=0;
     //Storing the newly entered values..
     var fname2 = document.querySelector("#fname").value;
     var lname2 = document.querySelector("#lname").value;
     var age2 = document.querySelector("#age").value;
     var address1 = document.querySelector("#address1").value;
     var address2 = document.querySelector("#address2").value;
+    var city2 = document.querySelector("#city").value;
+    var state2 = document.querySelector("#state").value;
+    var pincode2 = document.querySelector("#pincode").value;
     var identity2 = document.querySelector("#identity").value;
-    console.log(fname2);
-
-
+    var idProff2 = document.querySelector("#idProff").value;
+    console.log(idProff2);
 
 
     if (
@@ -171,8 +180,15 @@ form.addEventListener("submit", function (e) {
         age2 != "" &&
         address1 != "" &&
         address2 != "" &&
-        identity2 != ""
+        identity2 != ""&&
+        city2 !=""&&
+        state2 !="" &&
+        pincode2 !=""
     ) {
+
+
+
+
         //..in DB
         users[index].name.fname = fname2;
         //in Form Fields
@@ -185,12 +201,19 @@ form.addEventListener("submit", function (e) {
         document.getElementById("age").innerHTML = users[index].extras.age;
 
         users[index].address.address1 = address1;
-        document.getElementById("address1").innerHTML =
-            users[index].address.address1;
+        document.getElementById("address1").innerHTML = users[index].address.address1;
 
         users[index].address.address2 = address2;
-        document.getElementById("address2").innerHTML =
-            users[index].address.address2;
+        document.getElementById("address2").innerHTML = users[index].address.address2;
+
+        users[index].address.city = city2;
+        document.getElementById("address2").innerHTML = users[index].address.city;
+        
+        users[index].address.state = state2;
+        document.getElementById("address2").innerHTML = users[index].address.state;
+
+        users[index].address.pincode = pincode2;
+        document.getElementById("address2").innerHTML = users[index].address.pincode;
 
         var gender = document.querySelector("#gender");
         users[index].extras.gender = gender.value;
@@ -216,17 +239,60 @@ form.addEventListener("submit", function (e) {
     }
 
     if (users[index].extras.age > 0) {
-        localStorage.setItem("users", JSON.stringify({ user: users }));
-    } else {
-        alert(" Age Must Be Greater Than 0");
+
+        valid_age=valid_age+1;
     }
 
-    
 
-    //}
-    //  else{
-    //      alert("inavlid input");
-    //  }
+    
+    if (idProff2 == "Aadhar") {
+        if (!isNaN(identity2) && identity2.length == 12 && identity2[0] != 1 && identity2[0] != 0){
+            message = ''
+            valid_id=valid_id+1;
+        }
+        else{   
+            message = "enter valid aadhar card number "
+        }
+    }
+
+
+    if (idProff2 == "PAN") {
+        var regex = /[A-Z]{5}[0-9]{4}[A-Z]{1}$/;
+        if (!regex.test(identity)) {
+            message = "enter valid pan number"
+            console.log('valid')
+        } else {
+            message = ''
+            valid_id=valid_id+1;
+        }
+    }
+
+
+    if (idProff == 'DL') {
+        var regex = /^(([A-Z]{2}[0-9]{2})( )|([A-Z]{2}-[0-9]{2}))((19|20)[0-9][0-9])[0-9]{7}$/
+        if (!regex.test(identity)) {
+            message = "enter valid DL number"
+            console.log('invalid Dl')
+        } else {
+            message = ''
+            valid_id=valid_id+1;
+        }
+    }
+
+    if(valid_id>0 && valid_age>0){
+        localStorage.setItem("users", JSON.stringify({ user: users }));
+    }
+    else{
+        alert("inavlid age or id number");
+    }
+        //localStorage.setItem("users", JSON.stringify({ user: users }));
+    // } else {
+    //     alert(" Age Must Be Greater Than 0");
+    // }
+
     location.reload();
     console.log(users[index]);
+
 });
+
+

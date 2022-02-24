@@ -120,7 +120,11 @@
 
     </main>
 
-    <div id="outer-form-container">
+    <div id="outer-main_container">
+
+        <div class="outher-form_div"> 
+
+
         <form action="" id="outer-form">
 
 
@@ -130,47 +134,51 @@
 
             <div class="elements" id="outer-name">
                 <div>
-                    <label for="fname">First Name</label>
+                    <label for="outer-fname">First Name</label>
                     <input type="text" id="outer-fname" value="" disabled="disabled" required>
                 </div>
                 <div>
-                    <label for="lname">Last Name</label>
+                    <label for="outer-lname">Last Name</label>
                     <input type="text" id="outer-lname" value="" disabled="disabled" required>
                 </div>
 
             </div>
-            <div class="elements" id="outer-address">
+            
 
+                <div class ="elements"  id ="outer-second">
+                    <div>
+                        <label for="outer-address1">Line1</label><br>
+                        <input type="text" id="outer-address1" value="" disabled="disabled" required><br>
+                    </div>
+                    <div>
+                        <label for="outer-address2">Line2</label><br>
+                        <input type="text" id="outer-address2" value="" disabled="disabled" required><br>
+                    </div>
+                    <div>
+                        <label for="outer-city">City</label><br>
+                        <input type="text" id="outer-city" value="" disabled="disabled" required><br>
+                    </div>
+                </div>
 
+                <div class="elements" id="outer-address">
                 <div>
-                    <label for="address1">Line1</label><br>
-                    <input type="text" id="outer-address1" value="" disabled="disabled" required><br>
-                </div>
-                <div>
-                    <label for="address2">Line2</label><br>
-                    <input type="text" id="outer-address2" value="" disabled="disabled" required><br>
-                </div>
-                <div>
-                    <label for="address2">City</label><br>
-                    <input type="text" id="outer-city" value="" disabled="disabled" required><br>
-                </div>
-                <div>
-                    <label for="address2">Pincode</label><br>
+                    <label for="outer-pincode">Pincode</label><br>
                     <input type="text" id="outer-pincode" value="" disabled="disabled" required><br>
                 </div>
                 <div>
-                    <label for="address2">State</label><br>
+                    <label for="outer-state">State</label><br>
                     <input type="text" id="outer-state" value="" disabled="disabled" required><br>
                 </div>
+            </div>
 
             </div>
             <div class="elements" id="age-gender">
                 <div>
-                    <label for="age">Age</label><br>
+                    <label for="outer-age">Age</label><br>
                     <input type="text" id="outer-age" value="" disabled="disabled" required><br>
                 </div>
                 <div>
-                    <label for="gender">Gender</label><br>
+                    <label for="outer-gender">Gender</label><br>
                     <input type="text" id="outer-gender" value="" disabled="disabled" required><br>
                     <!-- <select id="outer-gender" name="gender" disabled="disabled" >
                         <option value="Male">Male</option>
@@ -178,7 +186,8 @@
                       </select> -->
                 </div>
             </div>
-            <div class="elements">
+            <div class="elements" id="id-type">
+                <div>
                 <label for="outer-idProff">Id Type</label><br>
                 <input type="text" id="outer-idProff" value="" disabled="disabled"><br>
 
@@ -187,11 +196,12 @@
                     <option value="DL">DL</option>
                     <option value="PAN">PAN</option>
                   </select> -->
-
-            </div>
-            <div class="elements">
-                <label for="identity">Number</label><br>
-                <input type="text" id="outer-identity" value="" disabled="disabled" required><br>
+                </div>
+                <div>
+                    <label for="identity">Number</label><br>
+                    <input type="text" id="outer-identity" value="" disabled="disabled" required><br>
+                </div>
+             
             </div>
             <div class="elements" id="outer-buttons">
                 <div id="button" class="button">
@@ -201,6 +211,7 @@
                 </div>
 
         </form>
+    </div>
 
         </div>
 
