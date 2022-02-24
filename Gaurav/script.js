@@ -42,7 +42,6 @@ window.onload = function() {
         navBar = document.getElementById("navBar")
         section = document.getElementById("section")
         onRegisterButtonClick = (e) => {
-            alert('hh')
             alert1.style.display = "none"
             console.log(popUp.style.display)
             if (String(popUp.style.display) == "block") {
@@ -61,7 +60,7 @@ window.onload = function() {
         onCloseButton = () => {
             location.replace('./index.html')
             section.style.display = "flex"
-            alert.style.display = "none"
+            alert1.style.display = "none"
             console.log('hjhjh')
             popUp.style.display = "none"
             navBar.style.filter = "blur(0px)"
@@ -94,7 +93,6 @@ window.onload = function() {
 
 
         onSubmit = (e) => {
-            alert('clicked')
             e.preventDefault()
             console.log('in on submit')
             alert1.style.display = "none"
@@ -150,8 +148,8 @@ window.onload = function() {
                         }
                     }
                     if (message != '') {
-                        alert.style.display = "block"
-                        alert.innerHTML = message
+                        alert1.style.display = "block"
+                        alert1.innerHTML = message
                     } else {
                         const id = localStorage.getItem("lastId") || 1000
                         localStorage.setItem("lastId", id + 1)
@@ -211,13 +209,13 @@ window.onload = function() {
                         document.getElementById("identity").value = ''
                     }
                 } else {
-                    alert.style.display = "block"
-                    alert.innerHTML = "Age Must be greater than or equal to 1"
+                    alert1.style.display = "block"
+                    alert1.innerHTML = "Age Must be greater than or equal to 1"
                 }
 
             } else {
-                alert.style.display = "block"
-                alert.innerHTML = "Please Fill All The Values"
+                alert1.style.display = "block"
+                alert1.innerHTML = "Please Fill All The Values"
             }
 
         }
