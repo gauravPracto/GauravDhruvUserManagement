@@ -11,9 +11,15 @@ body {
     margin: 10px;
 }
 
-.profile_div {
-    width: 90%;
+.profile_pic {
+    width: 100%;
     margin: auto;
+    text-align: center;
+}
+
+img {
+    width: 100px;
+    height: 100px;
 }
 
 .form_div {
@@ -29,54 +35,75 @@ body {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
+.elements{
+    align-items: center;
+    justify-content: center;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+#form{
+    width:80%;
+    padding: 50px;
+}
+
 .group {
-    width: 100%;
+    width: auto;
     margin-bottom: 20px;
     font-size: larger;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: cadetblue;
+    text-align: center;
 }
 
-#name {
+#name,#address{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#lname,
-#fname {
+#lname,#fname,#address1,#address2,#age,#gender {
     width: 80%;
 }
 
-#address,
-#age-gender {
+#age-gender{
     display: flex;
+    grid-template-columns: 1.2fr 1fr;
+    padding-left: 0px;
+    margin: auto;
+    margin-left: 0px;
+    
 }
 
-#address1,
-#address2,
-#age,
-#gender {
-    width: 90%;
-}
+/* #age-div{
+    padding: 5px;
+} */
+
+/* #gender-div{
+    margin: 10px 8px 0px 0px;
+} */
 
 #buttons {
     justify-content: center;
     display: flex;
 }
 
-img {
-    width: 100px;
-    height: 100px;
-    position: relative;
-    left: 30%;
-}
-
 label {
     width: 30px;
 }
 
-input[type=text] {
+#gender{
+    width: auto;
+    /* padding: 0px 0px 0px 0px; */
+    margin: 0px 0px 20px 0px;
+    
+    box-sizing: border-box;
+    height: 30px;
+    display: flex;
+    
+}
+
+input[type=text]{
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -85,11 +112,11 @@ input[type=text] {
     display: flex;
 }
 
-input[type=text]:focus {
+input[type=text] :focus {
     border: 3px solid rgb(154, 231, 11);
 }
 
-select {
+#idProff {
     width: 100%;
     padding: 0px 20px;
     margin: 8px 0;
@@ -97,6 +124,7 @@ select {
     height: 30px;
     display: flex;
 }
+
 
 input[type=button] {
     background-color: #04AA6D;
@@ -124,6 +152,7 @@ label {
     text-decoration: solid;
     font-size: large;
     font-family: Arial, Helvetica, sans-serif;
+    justify-content: center;
 }
 
 #edit_Value {
