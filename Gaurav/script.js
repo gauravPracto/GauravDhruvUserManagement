@@ -62,7 +62,7 @@ if (edit != null) {
 console.log(myStorage.getItem("users"))
 array.map((element) => {
     console.log(element)
-    section.innerHTML += '<a href="./page2.html?id=' + element.id + '"><div class="card"><img class="face-image" src=' + element.image + ' alt="male"><h4><b>' + element.name + '</b></h4><p>' + element.gender + '</p><p>' + element.age + " years" + '</p></div></a>'
+    section.innerHTML += '<a href="./page2.html?id=' + element.id + '"><div class="card"><img class="face-image" src=' + element.image + ' alt="male"><h4><b>' + element.fname + " " + element.lname + '</b></h4><p>' + element.gender + '</p><p>' + element.age + " years" + '</p></div></a>'
 })
 
 
@@ -98,7 +98,7 @@ const onSubmit = (e) => {
             if (ind == -1) {
 
                 myStorage.setItem("id", id);
-                section.innerHTML += '<a href="./page2.html?id=' + id + '"><div class="card"><img class="face-image" src=' + element.image + ' alt="male"><h4><b>' + element.name + '</b></h4><p>' + element.gender + '</p><p>' + element.age + " years" + '</p></div></a>'
+                section.innerHTML += '<a href="./page2.html?id=' + id + '"><div class="card"><img class="face-image" src=' + element.image + ' alt="male"><h4><b>' + element.fname + " " + element.lname + '</b></h4><p>' + element.gender + '</p><p>' + element.age + " years" + '</p></div></a>'
 
             } else {
                 location.replace("./index.html")
