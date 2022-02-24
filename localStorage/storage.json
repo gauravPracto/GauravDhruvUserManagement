@@ -1,1 +1,24 @@
-[{ "name": "Harry", "age": "32" }]
+[{
+    "address": {
+        "address1": "home",
+        "address2": "home",
+        "pincode": "1223",
+        "state": "klkl",
+        "city": "jkjk"
+    },
+    "name": {
+        "fname": "Gaurav",
+        "lname": "Singh"
+    },
+    "id": 1,
+    "identity": {
+        "id_type": "Aadhar",
+        "id_number": "333333333333"
+    },
+    "extras": {
+        "image": "https://img.icons8.com/external-justicon-lineal-color-justicon/344/external-boy-christmas-avatar-justicon-lineal-color-justicon-5.png",
+        "gender": "Male",
+        "DOB": "",
+        "age": "11"
+    }
+}]
