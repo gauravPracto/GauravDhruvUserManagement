@@ -4,7 +4,7 @@ body{
   
   .modal-bg{
     position: fixed;
-    width: 100%;
+    width: 80%;
     height: 100vh;
     top: 0;
     left: 0;
@@ -49,7 +49,6 @@ body{
     display: flex;
     justify-content: center;
     height: 600px;
-    
   }
   
   .profile_div{
@@ -78,8 +77,9 @@ body{
   }
   #name{
     display: flex;
-    justify-content:center;
+    justify-content:space-evenly;
     align-items:center;
+    width: 100%;
   }
   
   #lname,#fname{
@@ -88,11 +88,18 @@ body{
   
   
   
-  #address,#age-gender{
+  #address{
     display: flex;
+    height: 40%;
+  }
+
+  #age-gender{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
   }
   
-  #address1,#address2,#age,#gender{
+  #address1,#address2,#age,#gender,#city,#state,#pincode{
     width:90%; 
   }
   
@@ -135,6 +142,7 @@ body{
     box-sizing: border-box;
     height: 30px;
     display: flex;
+    visibility: inherit;
   }
   
   input[type=button]  {
@@ -166,5 +174,104 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     
   }
+
+  /* aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa */
+
+
+
+
+  
+  .outer-main_container{
+    align-items: center;
+    align-content: center;
+    display: flex;
+    justify-content: center;
+    height: 600px;
+  }
+  
+
+  #outer-form-container{
+    width:80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+}
+#outer-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    background-color: blue;
+    width:80%;
+}
+
+
+
+  .outer-profile_div{
+    text-align: center;
+    display: inherit;
+    align-items: center;
+  }
+  
+  .outer-form_div{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    background-color: #555;
+    
+    justify-content:space-around;
+    
+    width:100%;
+    height: fit-content;
+    box-shadow: 10px 10px rgb(53, 52, 52);
+    
+  
+    border-radius: 8px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 1%;
+  }
+  #outer-name{
+    display: inherit;
+    justify-content:center;
+    align-items:center;
+  }
+  
+  #outer-lname,#outer-fname{
+    width: 80%;
+  }
   
   
+  
+  #outer-address{
+    display: flex;
+    width: 100%;
+    height: 200px;
+    flex-wrap: wrap;
+  }
+
+  #outer-age-gender{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;   
+  }
+  
+  #outer-address1,#outer-address2,#outer-age,#outer-gender,#outer-city,#outer-state,#outer-pincode{
+    width:90%; 
+  }
+
+  #edit_Value{
+    position: absolute;
+    right:2%;
+    bottom: 2%;
+    display: flex;
+    
+    
+  }
+
+  #edit-button-div{
+      height:50%;
+  }

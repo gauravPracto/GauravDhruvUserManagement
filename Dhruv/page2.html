@@ -10,9 +10,9 @@
 </head>
 
 <body>
-    <main>
-
-
+    
+        <main>
+<!-- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa -->
         <div class="modal-bg">
             <div class="modal">
                 
@@ -44,12 +44,24 @@
                             </div>
                             <div class="elements" id="address">
                                 <div>
-                                    <label for="address1">Address 1</label><br>
+                                    <label for="address1">Line-1</label><br>
                                     <input type="text" id="address1" value="" disabled="disabled" required><br>
                                 </div>
                                 <div>
-                                    <label for="address2">Address 2</label><br>
+                                    <label for="address2">Line-2</label><br>
                                     <input type="text" id="address2" value="" disabled="disabled" required><br>
+                                </div>
+                                <div>
+                                    <label for="address2">City</label><br>
+                                    <input type="text" id="city" value="" disabled="disabled" required><br>
+                                </div>
+                                <div>
+                                    <label for="address2">Pincode</label><br>
+                                    <input type="text" id="pincode" value="" disabled="disabled" required><br>
+                                </div>
+                                <div>
+                                    <label for="address2">State</label><br>
+                                    <input type="text" id="state" value="" disabled="disabled" required><br>
                                 </div>
         
                             </div>
@@ -84,9 +96,9 @@
                             </div>
                             <div class="elements" id="buttons">
                                 <div id="button" class="button">
-                                    <input type="button" id="edit_Value" value="Edit On" onclick="enableDisable(this)"></button>
+                                    <!-- <input type="button" id="edit_Value" value="Edit On" onclick="enableDisable(this)"></button> -->
                                     <button type="submit">Submit</button>
-                                    
+                                </div>
                                     
                             </div>
                             
@@ -105,10 +117,92 @@
 
     </main>
 
+    <div id="outer-form-container">
+        <form action="" id="outer-form">
 
+
+            <div class="outer-profile_div">
+                <img src="" id="outer-profilepic" alt="profile pic">
+            </div>
+
+            <div class="elements" id="outer-name">
+                <div>
+                    <label for="fname">First Name</label>
+                    <input type="text" id="outer-fname" value="" disabled="disabled" required>
+                </div>
+                <div>
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="outer-lname" value="" disabled="disabled" required>
+                </div>
+
+            </div>
+            <div class="elements" id="outer-address">
+
+                
+                <div>
+                    <label for="address1">Line1</label><br>
+                    <input type="text" id="outer-address1" value="" disabled="disabled" required><br>
+                </div>
+                <div>
+                    <label for="address2">Line2</label><br>
+                    <input type="text" id="outer-address2" value="" disabled="disabled" required><br>
+                </div>
+                <div>
+                    <label for="address2">City</label><br>
+                    <input type="text" id="outer-city" value="" disabled="disabled" required><br>
+                </div>
+                <div>
+                    <label for="address2">Pincode</label><br>
+                    <input type="text" id="outer-pincode" value="" disabled="disabled" required><br>
+                </div>
+                <div>
+                    <label for="address2">State</label><br>
+                    <input type="text" id="outer-state" value="" disabled="disabled" required><br>
+                </div>
+
+            </div>
+            <div class="elements" id="age-gender">
+                <div>
+                    <label for="age">Age</label><br>
+                    <input type="text" id="outer-age" value="" disabled="disabled" required><br>
+                </div>
+                <div>
+                    <label for="gender">Gender</label><br>
+                    <input type="text" id="outer-gender" value="" disabled="disabled" required><br>
+                    <!-- <select id="outer-gender" name="gender" disabled="disabled" >
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                      </select> -->
+                </div>
+            </div>
+            <div class="elements">
+                <label for="outer-idProff">Id Type</label><br>
+                <input type="text" id ="outer-idProff" value="" disabled="disabled"><br>
+
+                <!-- <select id="outer-idProff" name="idProff" disabled="disabled">
+                    <option value="Aadhar">Aadhar</option>
+                    <option value="DL">DL</option>
+                    <option value="PAN">PAN</option>
+                  </select> -->
+
+            </div>
+            <div class="elements">
+                <label for="identity">Number</label><br>
+                <input type="text" id="outer-identity" value="" disabled="disabled" required><br>
+            </div>
+            <div class="elements" id="outer-buttons">
+                <div id="button" class="button">
+                    <!-- <input type="button" id="outer-edit_Value" value="Edit On" onclick="enableDisable(this)"></button> -->
+                    <button type="" > <a href="../Gaurav/index.html">Back</a></button>
+                    <!-- <button class="openmodal">Open Modal</button>   -->
+            </div>
+            
+        </form>
+        
+    </div>
     
 
-    <button class="openmodal">Open Modal</button>
+    <div id="edit-button-div"><button class="openmodal" id="edit_Value" value="Edit On">Edit value</button></div>    
     <script src="page2.js"></script>
 </body>
 

@@ -1,4 +1,4 @@
-//taking id 
+//taking id
 // getting id from url
 const myStorage = window.localStorage;
 const params = new URLSearchParams(location.search);
@@ -17,60 +17,42 @@ var users = JSON.parse(myStorage.getItem("users")).user;
 
 // getting the elements
 var openmodal = document.querySelector(".openmodal");
-var closemodal = document.querySelector(".modal-close")
+var closemodal = document.querySelector(".modal-close");
 var modal_bg = document.querySelector(".modal-bg");
 var fname = document.getElementById("fname");
 var lname = document.getElementById("lname");
 var address1 = document.getElementById("address1");
 var address2 = document.getElementById("address2");
+var city = document.getElementById("city");
+var state = document.getElementById("state");
+var pincode = document.getElementById("pincode");
 var gender = document.getElementById("gender");
 var age = document.getElementById("age");
 var idProff = document.getElementById("idProff");
 var identity = document.getElementById("identity");
 var edit_Value = document.getElementById("edit_Value");
 var profilepic = document.getElementById("profilepic");
+
+var outerfname = document.getElementById("outer-fname");
+var outerlname = document.getElementById("outer-lname");
+var outeraddress1 = document.getElementById("outer-address1");
+var outeraddress2 = document.getElementById("outer-address2");
+var outercity = document.getElementById("outer-city");
+var outerstate = document.getElementById("outer-state");
+var outerpincode = document.getElementById("outer-pincode");
+var outergender = document.getElementById("outer-gender");
+var outerage = document.getElementById("outer-age");
+var outeridProff = document.getElementById("outer-idProff");
+var outeridentity = document.getElementById("outer-identity");
+var outeredit_Value = document.getElementById("outer-edit_Value");
+var outerprofilepic = document.getElementById("outer-profilepic");
+
 var index;
 
 //modal
-openmodal.addEventListener('click',function(){
-    modal_bg.classList.add('bg-active');
-})
+openmodal.addEventListener("click", function () {
+    modal_bg.classList.add("bg-active");
 
-closemodal.addEventListener('click',function(){
-    modal_bg.classList.remove('bg-active');
-})
-
-//globar variable to store the edit state
-var newEditVal = edit_Value.value;
-
-//filling the datafeilds of the form, from the database 
-for (var i = 0; i < users.length; i++) {
-    if (users[i].id == id) {
-        console.log(users[i])
-        index = i;
-        fname.value = users[i].name.fname;
-        lname.value = users[i].name.lname;
-        address1.value = users[i].address.address1;
-        address2.value = users[i].address.address2;
-        gender.value = users[i].extras.gender;
-        age.value = users[i].extras.age;
-        idProff.value = users[i].identity.id_type;
-        identity.value = users[i].identity.id_number;
-        profilepic.src = users[i].extras.image;
-
-        console.log(users[i]);
-        console.log(index);
-    }
-    //console.log(users[i]);
-}
-
-//updating the profile pic
-
-
-//changing state of the form form edit on to off and vice versa
-function enableDisable() {
-
-    if (edit_Value.value == "Edit On") {
 
         fname.removeAttribute("disabled");
         lname.removeAttribute("disabled");
@@ -82,105 +64,169 @@ function enableDisable() {
         identity.removeAttribute("disabled");
 
         edit_Value.value = "Edit Off";
-    } else {
-        fname.setAttribute("disabled", "disabled");
-        lname.setAttribute("disabled", "disabled");
-        address1.setAttribute("disabled", "disabled");
-        address2.setAttribute("disabled", "disabled");
-        gender.setAttribute("disabled", "disabled");
-        age.setAttribute("disabled", "disabled");
-        idProff.setAttribute("disabled", "disabled");
-        identity.setAttribute("disabled", "disabled");
 
 
-        edit_Value.value = "Edit On";
+});
+
+closemodal.addEventListener("click", function () {
+    modal_bg.classList.remove("bg-active");
+});
+
+//globar variable to store the edit state
+var newEditVal = edit_Value.value;
+
+//filling the datafeilds of the form, from the database
+for (var i = 0; i < users.length; i++) {
+    if (users[i].id == id) {
+        console.log(users[i]);
+        index = i;
+        fname.value = users[i].name.fname;
+        lname.value = users[i].name.lname;
+        address1.value = users[i].address.address1;
+        address2.value = users[i].address.address2;
+        city.value = users[i].address.city;
+        state.value = users[i].address.state;
+        pincode.value = users[i].address.pincode;
+        gender.value = users[i].extras.gender;
+        age.value = users[i].extras.age;
+        idProff.value = users[i].identity.id_type;
+        identity.value = users[i].identity.id_number;
+        profilepic.src = users[i].extras.image;
+
+        // rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr
+
+        outerfname.value = users[i].name.fname;
+        outerlname.value = users[i].name.lname;
+        outeraddress1.value = users[i].address.address1;
+        outeraddress2.value = users[i].address.address2;
+        outercity.value = users[i].address.city;
+        outerstate.value = users[i].address.state;
+        outerpincode.value = users[i].address.pincode;
+        outergender.value = users[i].extras.gender;
+        outerage.value = users[i].extras.age;
+        outeridProff.value = users[i].identity.id_type;
+        outeridentity.value = users[i].identity.id_number;
+        outerprofilepic.src = users[i].extras.image;
+
+        //rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr
+
+        console.log(users[i]);
+        console.log(index);
     }
+    //console.log(users[i]);
 }
+
+//updating the profile pic
+
+//changing state of the form form edit on to off and vice versa
+// function enableDisable() {
+//     if (edit_Value.value == "Edit On") {
+//         fname.removeAttribute("disabled");
+//         lname.removeAttribute("disabled");
+//         address1.removeAttribute("disabled");
+//         address2.removeAttribute("disabled");
+//         gender.removeAttribute("disabled");
+//         age.removeAttribute("disabled");
+//         idProff.removeAttribute("disabled");
+//         identity.removeAttribute("disabled");
+
+//         edit_Value.value = "Edit Off";
+//     } else {
+//         fname.setAttribute("disabled", "disabled");
+//         lname.setAttribute("disabled", "disabled");
+//         address1.setAttribute("disabled", "disabled");
+//         address2.setAttribute("disabled", "disabled");
+//         gender.setAttribute("disabled", "disabled");
+//         age.setAttribute("disabled", "disabled");
+//         idProff.setAttribute("disabled", "disabled");
+//         identity.setAttribute("disabled", "disabled");
+
+//         edit_Value.value = "Edit On";
+//     }
+// }
 
 //console.log(users[0].name);
 
 var form = document.querySelector("#form");
 
 //submit funtion to store the newly entered values
-form.addEventListener("submit", function(e) {
-
+form.addEventListener("submit", function (e) {
     e.preventDefault();
 
     //Storing the newly entered values..
-    var fname2 = document.querySelector('#fname').value;
-    var lname2 = document.querySelector('#lname').value;
-    var age2 = document.querySelector('#age').value;
-    var address1 = document.querySelector('#address1').value;
-    var address2 = document.querySelector('#address2').value;
-    var identity2 = document.querySelector('#identity').value;
+    var fname2 = document.querySelector("#fname").value;
+    var lname2 = document.querySelector("#lname").value;
+    var age2 = document.querySelector("#age").value;
+    var address1 = document.querySelector("#address1").value;
+    var address2 = document.querySelector("#address2").value;
+    var identity2 = document.querySelector("#identity").value;
     console.log(fname2);
 
 
-    if(fname2!="" && lname2 !="" && age2!="" && address1 !="" && address2!="" && identity2!="" ){
 
-            //..in DB
-    users[index].fname = fname2;
-    //in Form Fields
-    document.getElementById("fname").innerHTML = users[index].name.fname;
-    
-    
-    
 
-    
-    users[index].name.lname = lname2;
-    document.getElementById("lname").innerHTML = users[index].name.lname;
+    if (
+        fname2 != "" &&
+        lname2 != "" &&
+        age2 != "" &&
+        address1 != "" &&
+        address2 != "" &&
+        identity2 != ""
+    ) {
+        //..in DB
+        users[index].name.fname = fname2;
+        //in Form Fields
+        document.getElementById("fname").innerHTML = users[index].name.fname2;
 
-    
-    users[index].extras.age = age2;
-    document.getElementById("age").innerHTML = users[index].extras.age;
+        users[index].name.lname = lname2;
+        document.getElementById("lname").innerHTML = users[index].name.lname;
 
-    
-    users[index].address.address1 = address1;
-    document.getElementById("address1").innerHTML = users[index].address.address1;
+        users[index].extras.age = age2;
+        document.getElementById("age").innerHTML = users[index].extras.age;
 
-    
-    users[index].address.address2 = address2;
-    document.getElementById("address2").innerHTML = users[index].address.address2;
+        users[index].address.address1 = address1;
+        document.getElementById("address1").innerHTML =
+            users[index].address.address1;
 
-    var gender = document.querySelector('#gender');
-    users[index].extras.gender = gender.value;
-    
+        users[index].address.address2 = address2;
+        document.getElementById("address2").innerHTML =
+            users[index].address.address2;
 
-    var idProff = document.querySelector('#idProff');
-    users[index].identity.id_type = idProff.value;
+        var gender = document.querySelector("#gender");
+        users[index].extras.gender = gender.value;
 
-    
-    users[index].identity.id_number = identity2;
-    document.getElementById("identity").value = users[index].identity.id_number;
-    console.log(gender);
-    
-    if (users[index].extras.gender == "Male") {
-        console.log("male");
-        users[index].extras.image="C:\Users\Dhruv Yadav\Desktop\trying\public\newBoy.png";
-        profilepic.src = "C:\Users\Dhruv Yadav\Desktop\trying\public\newBoy.png";
-    } else {
-        users[index].extras.image = "C:\Users\Dhruv Yadav\Desktop\trying\public\newGirl.png";
-        profilepic.src = "C:\Users\Dhruv Yadav\Desktop\trying\public\newGirl.png";
-        console.log("female");
-    }
+        var idProff = document.querySelector("#idProff");
+        users[index].identity.id_type = idProff.value;
 
-    }
-    else{
-        alert('enter all feilds');
-    }
+        users[index].identity.id_number = identity2;
+        document.getElementById("identity").value = users[index].identity.id_number;
+        console.log(gender);
 
-        if (users[index].extras.age > 0) {
-            localStorage.setItem("users", JSON.stringify({ user: users }))
-            
+        if (users[index].extras.gender == "Male") {
+            console.log("male");
+            users[index].extras.image = "../public/newBoy.png";
+            profilepic.src = "../public/newBoy.png";
         } else {
-            alert(" Age Must Be Greater Than 0")
+            users[index].extras.image = "../public/newGirl.png";
+            profilepic.src = "../public/newGirl.png";
+            console.log("female");
         }
+    } else {
+        alert("enter all feilds");
+    }
 
-     //}
+    if (users[index].extras.age > 0) {
+        localStorage.setItem("users", JSON.stringify({ user: users }));
+    } else {
+        alert(" Age Must Be Greater Than 0");
+    }
+
+    
+
+    //}
     //  else{
     //      alert("inavlid input");
     //  }
     location.reload();
     console.log(users[index]);
-
-})
+});
