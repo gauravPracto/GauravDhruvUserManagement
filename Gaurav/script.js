@@ -31,6 +31,7 @@ window.onload = function() {
                 myStorage.setItem("initial", initial)
                 array = [...array, ...data]
                 myStorage.setItem("users", JSON.stringify({ user: array }))
+                console.log(array);
             }
         }
 
@@ -89,7 +90,7 @@ window.onload = function() {
         console.log(myStorage.getItem("users"))
         array.map((element) => {
             console.log(element)
-            section.innerHTML += '<div class="card"><a href="../Dhruv/page2.html?id=' + element.id + '"><img class="face-image" src=' + element.extras.image + ' alt="male"><h4><b>' + element.name.fname + " " + element.name.lname + '</b></h4><p>' + element.extras.gender + '</p><p>' + element.extras.age + " years" + '</p></a><button onclick="onDelete(event)" id="delete" value=' + element.id + '>Delete</button></div>'
+            section.innerHTML += '<div class="card"><a href="../Dhruv/page2.html?id=' + element.id + '"><img class="face-image" src=../public/' + element.extras.image + ' alt="male"><h4><b>' + element.name.fname + " " + element.name.lname + '</b></h4><p>' + element.extras.gender + '</p><p>' + element.extras.age + " years" + '</p></a><button onclick="onDelete(event)" id="delete" value=' + element.id + '>Delete</button></div>'
         })
 
 
