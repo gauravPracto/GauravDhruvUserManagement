@@ -286,14 +286,19 @@
     display: flex;
     flex-direction: column;
     height: auto;
-    width: 80%;
+    width: 100%;
 }
 
 label {
     display: block;
 }
 
-.profile_div,.outer-profile_div {
+input {
+    width: 100px!important;
+}
+
+.profile_div,
+.outer-profile_div {
     text-align: center;
 }
 
@@ -301,84 +306,92 @@ label {
     margin: 2%;
 }
 
-#name,#outer-name {
+#name,
+#outer-name {
     display: flex;
     flex-direction: row;
     justify-content: start;
 }
 
-#name>div,#outer-name>div {
+#name>div,
+#outer-name>div {
     margin-left: 20px;
 }
 
-#second,#outer-second {
+#second,
+#outer-second {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+
+#second>div,
+#outer-second>div {
+    margin-left: 20px;
+}
+
+#address,
+#outer-address {
     display: flex;
     flex-direction: row;
     justify-content: start;
 }
 
-#second>div, #outer-second>div {
+#address>div,
+#outer-address>div {
     margin-left: 20px;
 }
 
-#address,#outer-address {
+#age-gender,
+#outer-age-gender {
     display: flex;
     flex-direction: row;
     justify-content: start;
 }
 
-#address>div, #outer-address>div {
+#age-gender>div,
+#outer-age-gender {
     margin-left: 20px;
 }
 
-#age-gender,#outer-age-gender {
+#id-type,
+#outer-id-type {
     display: flex;
     flex-direction: row;
     justify-content: start;
 }
 
-#age-gender>div,#outer-age-gender {
+#id-type>div,
+#outer-id-type>div {
     margin-left: 20px;
 }
 
-#id-type,#outer-id-type {
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-}
-
-#id-type>div ,#outer-id-type>div{
-    margin-left: 20px;
-}
-
-#buttons,#outer-button {
+#buttons,
+#outer-button {
     display: flex;
     justify-content: center;
 }
 
 
-
-
 /* aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa */
 
-
-.modal-bg{
+.modal-bg {
     position: fixed;
     width: 80%;
     height: 100vh;
     top: 0;
     left: 0;
-    background-color: rgb(0,0,0,0.8);
+    background-color: rgb(0, 0, 0, 0.8);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
     opacity: 0;
     visibility: hidden;
-    
-  }
-  
-  .modal{
+}
+
+.modal {
     position: relative;
     background-color: aliceblue;
     display: flex;
@@ -388,22 +401,22 @@ label {
     padding: 20px;
     margin: auto;
     text-align: center;
-  }
-  
-  .bg-active{
+}
+
+.bg-active {
     opacity: 1;
     visibility: visible;
-  }
-  
-  .modal-close{
+}
+
+.modal-close {
     position: absolute;
     top: 10px;
     right: 10px;
     font-weight: bold;
     cursor: pointer;
-  }
+}
 
-  img{
+img {
     width: 100px;
     height: 100px;
-  }
+}
