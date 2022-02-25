@@ -299,6 +299,7 @@ input {
 
 .profile_div,
 .outer-profile_div {
+    width: 70vw;
     text-align: center;
 }
 

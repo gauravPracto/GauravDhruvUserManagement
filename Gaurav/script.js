@@ -115,7 +115,7 @@ window.onload = function() {
             city = document.getElementById("city").value
             state = document.getElementById("state").value
             pincode = document.getElementById("pincode").value
-            DOB = document.getElementById("DOB").value
+                // DOB = document.getElementById("DOB").value
                 // console.log(DOB.split("-"))
             if (fname && lname && gender && age && address1 && idProff && identity && city && state && pincode) {
                 if (age > 0) {
@@ -176,7 +176,6 @@ window.onload = function() {
                                 extras: {
                                     image: gender == "Female" ? "../public/newGirl.png" : "../public/newBoy.png",
                                     gender: gender,
-                                    DOB: DOB,
                                     age: age
                                 }
                             }
