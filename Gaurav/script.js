@@ -4,11 +4,8 @@ window.onload = function() {
     fetch("../localStorage/storage.json").then(
         response => response.json()
     ).then(store => {
-        console.log(store)
         data = store
-        console.log(data)
         id = 0;
-        // var myData = JSON.parse(storage)
         myStorage = window.localStorage
         params = new URLSearchParams(location.search);
         edit = params.get("id")
@@ -17,7 +14,6 @@ window.onload = function() {
         } catch {
             initial = true
         }
-        console.log(initial, myStorage.getItem("initial"))
         var array;
         try {
             array = JSON.parse(myStorage.getItem("users")).user || []
@@ -25,13 +21,12 @@ window.onload = function() {
             array = []
         }
         if (initial == true) {
-            console.log(data)
             if (data != undefined) {
                 initial = false
                 myStorage.setItem("initial", initial)
                 array = [...array, ...data]
                 myStorage.setItem("users", JSON.stringify({ user: array }))
-                console.log(array);
+
             }
         }
 
@@ -45,15 +40,14 @@ window.onload = function() {
         section = document.getElementById("section")
         onRegisterButtonClick = (e) => {
             alert1.style.display = "none"
-            console.log(popUp.style.display)
+
             if (String(popUp.style.display) == "block") {
                 section.style.display = "flex"
                 popUp.style.display = "none"
                 navBar.style.filter = "blur(0px)"
                 section.style.filter = "blur(0px)"
             } else {
-                // section.style.display = "none"
-                console.log(body, navBar, section)
+
                 popUp.style.display = "block"
                 navBar.style.filter = "blur(2px)"
                 section.style.filter = "blur(2px)"
@@ -63,7 +57,7 @@ window.onload = function() {
             location.replace('./index.html')
             section.style.display = "flex"
             alert1.style.display = "none"
-            console.log('hjhjh')
+
             popUp.style.display = "none"
             navBar.style.filter = "blur(0px)"
             section.style.filter = "blur(0px)"
@@ -87,23 +81,17 @@ window.onload = function() {
 
 
 
-        console.log(myStorage.getItem("users"))
+
         array.map((element) => {
-            console.log(element)
+
             section.innerHTML += '<div class="card"><a href="../Dhruv/page2.html?id=' + element.id + '"><img class="face-image" src=../public/' + element.extras.image + ' alt="male"><h4><b>' + element.name.fname + " " + element.name.lname + '</b></h4><p>' + element.extras.gender + '</p><p>' + element.extras.age + " years" + '</p></a><button onclick="onDelete(event)" id="delete" value=' + element.id + '>Delete</button></div>'
         })
 
 
         onSubmit = (e) => {
             e.preventDefault()
-            console.log('in on submit')
+
             alert1.style.display = "none"
-                // if (element != null) {
-                //     id = Number(element.id)
-                // } else {
-                //     id = Number(myStorage.getItem("id")) + 1 || 1
-                // }
-                // console.log(myStorage.getItem("id"), 'lastIndex')
             fname = document.getElementById("fname").value
             lname = document.getElementById("lname").value
             gender = document.getElementById("gender").value
@@ -115,8 +103,6 @@ window.onload = function() {
             city = document.getElementById("city").value
             state = document.getElementById("state").value
             pincode = document.getElementById("pincode").value
-                // DOB = document.getElementById("DOB").value
-                // console.log(DOB.split("-"))
             if (fname && lname && gender && age && address1 && idProff && identity && city && state && pincode) {
                 if (age > 0) {
                     var message = ''
@@ -127,26 +113,26 @@ window.onload = function() {
                         else
                             message = "enter valid aadhar card number "
                     }
-                    console.log(idProff)
+
                     if (idProff == "PAN") {
                         var regex = /[A-Z]{5}[0-9]{4}[A-Z]{1}$/;
                         if (!regex.test(identity)) {
                             message = "enter valid pan number"
-                            console.log('valid')
+
                         } else {
                             message = ''
-                            console.log(regex.test(identity))
+
                         }
                     }
 
                     if (idProff == 'DL') {
-                        var regex = /^(([A-Z]{2}[0-9]{2})( )|([A-Z]{2}-[0-9]{2}))((19|20)[0-9][0-9])[0-9]{7}$/
+                        var regex = /^(([A-Z]{2}( )[0-9]{2})|([A-Z]{2}-[0-9]{2}))((19|20)[0-9][0-9])[0-9]{7}$/
                         if (!regex.test(identity)) {
                             message = "enter valid DL number"
-                            console.log('invalid Dl')
+
                         } else {
                             message = ''
-                            console.log(regex.test(identity))
+
                         }
                     }
                     if (message != '') {
@@ -155,46 +141,32 @@ window.onload = function() {
                     } else {
                         const id = localStorage.getItem("lastId") || 1000
                         localStorage.setItem("lastId", id + 1)
-                        const another = { lname: lname, fname: fname, id: id, name: fname + " " + lname, age: age, gender: gender, address1: address1, address2: address2, idProff: idProff, identity: identity, image: gender == "Female" ? "../public/newGirl.png" : "../public/newBoy.png" }
                         element = {
-                                address: {
-                                    address1: address1,
-                                    address2: address2,
-                                    pincode: pincode,
-                                    state: state,
-                                    city: city
-                                },
-                                name: {
-                                    fname: fname,
-                                    lname: lname
-                                },
-                                id: id,
-                                identity: {
-                                    id_type: idProff,
-                                    id_number: identity
-                                },
-                                extras: {
-                                    image: gender == "Female" ? "../public/newGirl.png" : "../public/newBoy.png",
-                                    gender: gender,
-                                    age: age
-                                }
+                            address: {
+                                address1: address1,
+                                address2: address2,
+                                pincode: pincode,
+                                state: state,
+                                city: city
+                            },
+                            name: {
+                                fname: fname,
+                                lname: lname
+                            },
+                            id: id,
+                            identity: {
+                                id_type: idProff,
+                                id_number: identity
+                            },
+                            extras: {
+                                image: gender == "Female" ? "../public/newGirl.png" : "../public/newBoy.png",
+                                gender: gender,
+                                age: age
                             }
-                            //             var ind = -1
-                            //             array.forEach((ele, index) => { if (ele.id == id) ind = index })
-                            //             if (ind != -1)
-                            //                 array[ind] = element
-                            //             else
+                        }
                         array.push(element)
                         myStorage.setItem("users", JSON.stringify({ user: array }))
-                            //             if (ind == -1) {
-
-                        //                 myStorage.setItem("id", id);
                         section.innerHTML += '<div class="card"><a href="../Dhruv/page2.html?id=' + id + '"><img class="face-image" src=' + element.extras.image + ' alt="male"><h4><b>' + element.name.fname + " " + element.name.lname + '</b></h4><p>' + element.extras.gender + '</p><p>' + element.extras.age + " years" + '</p></a><button onclick="onDelete(event)" id="delete" value=' + id + '>Delete</button></div>'
-
-                        //             } else {
-                        //                 location.replace("./index.html")
-                        //             }
-                        //             console.log(fname, lname, gender, age, address1, address2, idProff, identity)
                         popUp.style.display = "none"
                         navBar.style.filter = "blur(0px)"
                         section.style.filter = "blur(0px)"
@@ -225,7 +197,6 @@ window.onload = function() {
         onDelete = (event) => {
             const updatedArr = array.filter(ele => { return ele.id != event.target.value })
             array = updatedArr
-            console.log(array)
             localStorage.setItem("users", JSON.stringify({ user: array }))
             try {
                 array = JSON.parse(myStorage.getItem("users")).user || []
@@ -234,20 +205,10 @@ window.onload = function() {
             }
             section.innerHTML = ""
             array.map((element) => {
-                console.log(element)
                 section.innerHTML += '<div class="card"><a href="../Dhruv/page2.html?id=' + element.id + '"><img class="face-image" src=' + element.extras.image + ' alt="male"><h4><b>' + element.name.fname + " " + element.name.lname + '</b></h4><p>' + element.extras.gender + '</p><p>' + element.extras.age + " years" + '</p></a><button onclick="onDelete(event)" id="delete" value=' + element.id + '>Delete</button></div>'
 
             })
         }
-
-        console.log('here')
-
-
-
-
-
-
-
 
     }).catch(e => console.log(e))
 
