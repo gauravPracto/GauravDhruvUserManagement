@@ -258,7 +258,7 @@ form.addEventListener("submit", function (e) {
 
     if (idProff2 == "PAN") {
         var regex = /[A-Z]{5}[0-9]{4}[A-Z]{1}$/;
-        if (!regex.test(identity)) {
+        if (!regex.test(identity2)) {
             message = "enter valid pan number"
             console.log('valid')
         } else {
@@ -268,9 +268,9 @@ form.addEventListener("submit", function (e) {
     }
 
 
-    if (idProff == 'DL') {
+    if (idProff2 == 'DL') {
         var regex = /^(([A-Z]{2}[0-9]{2})( )|([A-Z]{2}-[0-9]{2}))((19|20)[0-9][0-9])[0-9]{7}$/
-        if (!regex.test(identity)) {
+        if (!regex.test(identity2)) {
             message = "enter valid DL number"
             console.log('invalid Dl')
         } else {
@@ -285,9 +285,9 @@ form.addEventListener("submit", function (e) {
     else{
         alert("inavlid age or id number");
     }
-        //localStorage.setItem("users", JSON.stringify({ user: users }));
-    // } else {
-    //     alert(" Age Must Be Greater Than 0");
+
+    // if(valid_age==0){
+        
     // }
 
     location.reload();

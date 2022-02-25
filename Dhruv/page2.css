@@ -277,6 +277,7 @@
 #form_div {
     background-color: aliceblue;
     height: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 #form {
@@ -287,6 +288,19 @@
     flex-direction: column;
     height: auto;
     width: 100%;
+    
+}
+
+#outer-form{
+    background-color:aliceblue;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 60%;
+}
+
+.outer-form_div{
+    background-color: rgb(233, 231, 229);
+    display: flex;
+    justify-content: center;
 }
 
 label {
@@ -299,7 +313,7 @@ input {
 
 .profile_div,
 .outer-profile_div {
-    width: 70vw;
+    width: 100%;
     text-align: center;
 }
 
@@ -352,7 +366,7 @@ input {
 }
 
 #age-gender>div,
-#outer-age-gender {
+#outer-age-gender>div {
     margin-left: 20px;
 }
 
@@ -420,4 +434,46 @@ input {
 img {
     width: 100px;
     height: 100px;
+}
+
+@media(max-width: 470px){
+
+    #id-type,
+    #outer-id-type {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;   
+}
+
+#age-gender,
+#outer-age-gender {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+#second,
+#outer-second {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+
+#name,
+#outer-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+#address,
+#outer-address {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+#form div{
+    margin: auto;
+}
 }
