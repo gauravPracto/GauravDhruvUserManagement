@@ -1,23 +1,9 @@
-//taking id
-// getting id from url
+
 const myStorage = window.localStorage;
 const params = new URLSearchParams(location.search);
 const id = params.get("id");
 var users = JSON.parse(myStorage.getItem("users")).user;
 
-
-//sample DB
-// var users = [{ id: "1", fname: "Sam", lname: "", address1: "123/1", address2: "delhi", gender: "male", age: "32", idProff: "Aadhar", identity: "adh67647676" },
-//     { id: "2", fname: "Alex", lname: "Adams", address1: "123/2", address2: "noida", gender: "male", age: "74", idProff: "PAN", identity: "pan74636993809" },
-//     { id: "3", fname: "Wick", lname: "", address1: "123/3", address2: "lucknow", gender: "male", age: "21", idProff: "Aadhar", identity: "adh93879235" },
-//     { id: "4", fname: "Tim", lname: "", address1: "123/4", address2: "jaipur", gender: "male", age: "44", idProff: "Aadhar", identity: "pan935795" },
-//     { id: "5", fname: "Simon", lname: "", address1: "123/5", address2: "manali", gender: "male", age: "23", idProff: "PAN", identity: "pan9357198537" },
-//     { id: "6", fname: "James", lname: "", address1: "123/6", address2: "bangalore", gender: "male", age: "15", idProff: "PAN", identity: "pan35791857" },
-//     { id: "7", fname: "Chris", lname: "", address1: "123/7", address2: "mumbai", gender: "male", age: "58", idProff: "PAN", identity: "pan53710935" },
-//     { id: "8", fname: "Matt", lname: "", address1: "123/8", address2: "chennai", gender: "male", age: "86", idProff: "PAN", identity: "pan0350935" },
-// ];
-
-// getting the elements
 var openmodal = document.querySelector(".openmodal");
 var closemodal = document.querySelector(".modal-close");
 var modal_bg = document.querySelector(".modal-bg");
@@ -51,7 +37,6 @@ var outerprofilepic = document.getElementById("outer-profilepic");
 
 var index;
 
-//modal
 openmodal.addEventListener("click", function () {
     modal_bg.classList.add("bg-active");
 
@@ -77,10 +62,8 @@ closemodal.addEventListener("click", function () {
     modal_bg.classList.remove("bg-active");
 });
 
-//globar variable to store the edit state
 var newEditVal = edit_Value.value;
 
-//filling the datafeilds of the form, from the database
 for (var i = 0; i < users.length; i++) {
     if (users[i].id == id) {
         console.log(users[i]);
@@ -98,7 +81,6 @@ for (var i = 0; i < users.length; i++) {
         identity.value = users[i].identity.id_number;
         profilepic.src = users[i].extras.image;
 
-        // rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr
 
         outerfname.value = users[i].name.fname;
         outerlname.value = users[i].name.lname;
@@ -113,54 +95,21 @@ for (var i = 0; i < users.length; i++) {
         outeridentity.value = users[i].identity.id_number;
         outerprofilepic.src = users[i].extras.image;
 
-        //rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr
 
         console.log(users[i]);
         console.log(index);
     }
-    //console.log(users[i]);
 }
 
-//updating the profile pic
-
-//changing state of the form form edit on to off and vice versa
-// function enableDisable() {
-//     if (edit_Value.value == "Edit On") {
-//         fname.removeAttribute("disabled");
-//         lname.removeAttribute("disabled");
-//         address1.removeAttribute("disabled");
-//         address2.removeAttribute("disabled");
-//         gender.removeAttribute("disabled");
-//         age.removeAttribute("disabled");
-//         idProff.removeAttribute("disabled");
-//         identity.removeAttribute("disabled");
-
-//         edit_Value.value = "Edit Off";
-//     } else {
-//         fname.setAttribute("disabled", "disabled");
-//         lname.setAttribute("disabled", "disabled");
-//         address1.setAttribute("disabled", "disabled");
-//         address2.setAttribute("disabled", "disabled");
-//         gender.setAttribute("disabled", "disabled");
-//         age.setAttribute("disabled", "disabled");
-//         idProff.setAttribute("disabled", "disabled");
-//         identity.setAttribute("disabled", "disabled");
-
-//         edit_Value.value = "Edit On";
-//     }
-// }
-
-//console.log(users[0].name);
 
 var form = document.querySelector("#form");
 
-//submit funtion to store the newly entered values
+
 form.addEventListener("submit", function (e) {
     e.preventDefault();
 
     var valid_age =0;
     var valid_id=0;
-    //Storing the newly entered values..
     var fname2 = document.querySelector("#fname").value;
     var lname2 = document.querySelector("#lname").value;
     var age2 = document.querySelector("#age").value;
@@ -187,11 +136,7 @@ form.addEventListener("submit", function (e) {
     ) {
 
 
-
-
-        //..in DB
         users[index].name.fname = fname2;
-        //in Form Fields
         document.getElementById("fname").innerHTML = users[index].name.fname2;
 
         users[index].name.lname = lname2;
@@ -285,10 +230,6 @@ form.addEventListener("submit", function (e) {
     else{
         alert("inavlid age or id number");
     }
-
-    // if(valid_age==0){
-        
-    // }
 
     location.reload();
     console.log(users[index]);
