@@ -52,28 +52,28 @@ var outerprofilepic = document.getElementById("outer-profilepic");
 var index;
 
 //modal
-openmodal.addEventListener("click", function () {
+openmodal.addEventListener("click", function() {
     modal_bg.classList.add("bg-active");
 
 
-        fname.removeAttribute("disabled");
-        lname.removeAttribute("disabled");
-        address1.removeAttribute("disabled");
-        address2.removeAttribute("disabled");
-        gender.removeAttribute("disabled");
-        age.removeAttribute("disabled");
-        idProff.removeAttribute("disabled");
-        identity.removeAttribute("disabled");
-        city.removeAttribute("disabled");
-        state.removeAttribute("disabled");
-        pincode.removeAttribute("disabled");
+    fname.removeAttribute("disabled");
+    lname.removeAttribute("disabled");
+    address1.removeAttribute("disabled");
+    address2.removeAttribute("disabled");
+    gender.removeAttribute("disabled");
+    age.removeAttribute("disabled");
+    idProff.removeAttribute("disabled");
+    identity.removeAttribute("disabled");
+    city.removeAttribute("disabled");
+    state.removeAttribute("disabled");
+    pincode.removeAttribute("disabled");
 
-        edit_Value.value = "Edit Off";
+    edit_Value.value = "Edit Off";
 
 
 });
 
-closemodal.addEventListener("click", function () {
+closemodal.addEventListener("click", function() {
     modal_bg.classList.remove("bg-active");
 });
 
@@ -155,11 +155,11 @@ for (var i = 0; i < users.length; i++) {
 var form = document.querySelector("#form");
 
 //submit funtion to store the newly entered values
-form.addEventListener("submit", function (e) {
+form.addEventListener("submit", function(e) {
     e.preventDefault();
 
-    var valid_age =0;
-    var valid_id=0;
+    var valid_age = 0;
+    var valid_id = 0;
     //Storing the newly entered values..
     var fname2 = document.querySelector("#fname").value;
     var lname2 = document.querySelector("#lname").value;
@@ -180,10 +180,10 @@ form.addEventListener("submit", function (e) {
         age2 != "" &&
         address1 != "" &&
         address2 != "" &&
-        identity2 != ""&&
-        city2 !=""&&
-        state2 !="" &&
-        pincode2 !=""
+        identity2 != "" &&
+        city2 != "" &&
+        state2 != "" &&
+        pincode2 != ""
     ) {
 
 
@@ -208,7 +208,7 @@ form.addEventListener("submit", function (e) {
 
         users[index].address.city = city2;
         document.getElementById("address2").innerHTML = users[index].address.city;
-        
+
         users[index].address.state = state2;
         document.getElementById("address2").innerHTML = users[index].address.state;
 
@@ -240,17 +240,16 @@ form.addEventListener("submit", function (e) {
 
     if (users[index].extras.age > 0) {
 
-        valid_age=valid_age+1;
+        valid_age = valid_age + 1;
     }
 
 
-    
+
     if (idProff2 == "Aadhar") {
-        if (!isNaN(identity2) && identity2.length == 12 && identity2[0] != 1 && identity2[0] != 0){
+        if (!isNaN(identity2) && identity2.length == 12 && identity2[0] != 1 && identity2[0] != 0) {
             message = ''
-            valid_id=valid_id+1;
-        }
-        else{   
+            valid_id = valid_id + 1;
+        } else {
             message = "enter valid aadhar card number "
         }
     }
@@ -263,7 +262,7 @@ form.addEventListener("submit", function (e) {
             console.log('valid')
         } else {
             message = ''
-            valid_id=valid_id+1;
+            valid_id = valid_id + 1;
         }
     }
 
@@ -275,17 +274,16 @@ form.addEventListener("submit", function (e) {
             console.log('invalid Dl')
         } else {
             message = ''
-            valid_id=valid_id+1;
+            valid_id = valid_id + 1;
         }
     }
 
-    if(valid_id>0 && valid_age>0){
+    if (valid_id > 0 && valid_age > 0) {
         localStorage.setItem("users", JSON.stringify({ user: users }));
-    }
-    else{
+    } else {
         alert("inavlid age or id number");
     }
-        //localStorage.setItem("users", JSON.stringify({ user: users }));
+    //localStorage.setItem("users", JSON.stringify({ user: users }));
     // } else {
     //     alert(" Age Must Be Greater Than 0");
     // }
@@ -294,5 +292,3 @@ form.addEventListener("submit", function (e) {
     console.log(users[index]);
 
 });
-
-
