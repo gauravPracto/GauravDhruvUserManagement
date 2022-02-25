@@ -16,7 +16,7 @@
         "id_number": "333333333333"
     },
     "extras": {
-        "image": "https://img.icons8.com/external-justicon-lineal-color-justicon/344/external-boy-christmas-avatar-justicon-lineal-color-justicon-5.png",
+        "image": "../public/newBoy.png",
         "gender": "Male",
         "DOB": "",
         "age": "11"

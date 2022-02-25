@@ -1,278 +1,6 @@
-/* body{
-    background-color: rgb(146, 149, 151);  
-  }
-  
-  .modal-bg{
-    position: fixed;
-    width: 80%;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    background-color: rgb(0,0,0,0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    opacity: 0;
-    visibility: hidden;
-    
-  }
-  
-  .modal{
-    position: relative;
+body {
     background-color: aliceblue;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-direction: column;
-    padding: 20px;
-    margin: auto;
-    text-align: center;
-  }
-  
-  .bg-active{
-    opacity: 1;
-    visibility: visible;
-  }
-  
-  .modal-close{
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  .main_container{
-    align-items: center;
-    align-content: center;
-    display: flex;
-    justify-content: center;
-    height: 600px;
-  }
-  
-  .profile_div{
-    text-align: center;
-    display: flex;
-    align-items: center;
-  }
-  
-  .form_div{
-    display: flex;
-    align-items: center;
-    align-content: center;
-    background-color: #555;
-    
-    justify-content: center;
-    
-    width:100%;
-    height: fit-content;
-    box-shadow: 10px 10px rgb(53, 52, 52);
-    
-  
-    border-radius: 8px;
-    padding-top: 10px;
-    padding-left: 10px;
-    padding-right: 1%;
-  }
-  #name{
-    display: flex;
-    justify-content:space-evenly;
-    align-items:center;
-    width: 100%;
-  }
-  
-  #lname,#fname{
-    width: 80%;
-  }
-  
-  
-  
-  #address{
-    display: flex;
-    height: 40%;
-  }
-
-  #age-gender{
-    display: flex;
-    width: 100%;
-    justify-content: space-evenly;
-  }
-  
-  #address1,#address2,#age,#gender,#city,#state,#pincode{
-    width:90%; 
-  }
-  
-  #buttons{
-    justify-content: center;
-    display: flex;
-  }
-  
-  img{
-    width: 100px;
-    height: 100px;
-    position: relative;
-    left: 30%;
-    text-align: center;
-  }
-  
-  label{
-    width: 30px;
-  
-  }
-  
-  input[type=text]  {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    height: 20px;
-    
-    display: flex;
-  }
-  
-  input[type=text]:focus {
-    border: 3px solid rgb(154, 231, 11);
-  }
-  
-  select{
-    width: 100%;
-    padding: 0px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    height: 30px;
-    display: flex;
-    visibility: inherit;
-  }
-  
-  input[type=button]  {
-    background-color: #04AA6D;
-    border: none;
-    color: white;
-    padding: 16px 32px;
-    text-decoration: none;
-    margin: 10px 2px;
-    cursor: pointer;
-    
-    
-  }
-  
-  button {
-    background-color: #04AA6D;
-    border: none;
-    color: white;
-    padding: 16px 32px;
-    text-decoration: none;
-    margin: 4px 2px;
-    cursor: pointer;
-    
-  }
-  label{
-    
-    text-decoration: solid;
-    font-size: large;
-    font-family: Arial, Helvetica, sans-serif;
-    
-  }
-
-
-
-
-  
-  .outer-main_container{
-    align-items: center;
-    align-content: center;
-    display: flex;
-    justify-content: center;
-    height: 600px;
-  }
-  
-
-  #outer-form-container{
-    width:80%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-
 }
-#outer-form{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    flex-direction: column;
-    background-color: blue;
-    width:80%;
-}
-
-
-
-  .outer-profile_div{
-    text-align: center;
-    display: inherit;
-    align-items: center;
-  }
-  
-  .outer-form_div{
-    display: flex;
-    align-items: center;
-    align-content: center;
-    background-color: #555;
-    
-    justify-content:space-around;
-    
-    width:100%;
-    height: fit-content;
-    box-shadow: 10px 10px rgb(53, 52, 52);
-    
-  
-    border-radius: 8px;
-    padding-top: 10px;
-    padding-left: 10px;
-    padding-right: 1%;
-  }
-  #outer-name{
-    display: inherit;
-    justify-content:center;
-    align-items:center;
-  }
-  
-  #outer-lname,#outer-fname{
-    width: 80%;
-  }
-  
-  
-  
-  #outer-address{
-    display: flex;
-    width: 100%;
-    height: 200px;
-    flex-wrap: wrap;
-  }
-
-  #outer-age-gender{
-    display: flex;
-    width: 100%;
-    justify-content: space-evenly;   
-  }
-  
-  #outer-address1,#outer-address2,#outer-age,#outer-gender,#outer-city,#outer-state,#outer-pincode{
-    width:90%; 
-  }
-
-  #edit_Value{
-    position: absolute;
-    right:2%;
-    bottom: 2%;
-    display: flex;
-    
-    
-  }
-
-  #edit-button-div{
-      height:50%;
-  } */
 
 #form_div {
     background-color: aliceblue;
@@ -288,19 +16,24 @@
     flex-direction: column;
     height: auto;
     width: 100%;
-    
 }
 
-#outer-form{
-    background-color:aliceblue;
+#outer-form {
+    margin-top: 4%;
+    background-color: aliceblue;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     width: 60%;
 }
 
-.outer-form_div{
-    background-color: rgb(233, 231, 229);
+.outer-form_div {
+    background-color: aliceblue;
     display: flex;
     justify-content: center;
+}
+
+#edit-button-div {
+    position: absolute;
+    top: 10px;
 }
 
 label {
@@ -436,44 +169,39 @@ img {
     height: 100px;
 }
 
-@media(max-width: 470px){
-
+@media(max-width: 470px) {
     #id-type,
     #outer-id-type {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;   
-}
-
-#age-gender,
-#outer-age-gender {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-}
-
-#second,
-#outer-second {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    flex-wrap: wrap;
-}
-
-#name,
-#outer-name {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-}
-
-#address,
-#outer-address {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-}
-#form div{
-    margin: auto;
-}
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+    }
+    #age-gender,
+    #outer-age-gender {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+    }
+    #second,
+    #outer-second {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        flex-wrap: wrap;
+    }
+    #name,
+    #outer-name {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+    }
+    #address,
+    #outer-address {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+    }
+    #form div {
+        margin: auto;
+    }
 }
